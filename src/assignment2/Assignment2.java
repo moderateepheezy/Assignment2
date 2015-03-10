@@ -60,26 +60,29 @@ public class Assignment2 {
                 as.sortAscending(z);
                 break;
             case 5:
+                System.out.print("Enter range: ");
                 int r = getInt();
                 as.nonRecursivePrimeNumbers(r);
                 break;
-            case 6:
+            case 6:               
+                System.out.print("Enter range: ");
                 int range = getInt();
                     as.recursivePrimeNumber(range);
                 break;
             case 7:
                int maxSize = 16;
-        ArrayElements arr = new ArrayElements(maxSize);
+               ArrayElements arr = new ArrayElements(maxSize);
         
-        for(int i = 0; i < maxSize; i++){
-            double n = (int)(Math.random()*99);
-            arr.insert(n);
-        }
+                for(int i = 0; i < maxSize; i++){
+                    double n = (int)(Math.random()*99);
+                    arr.insert(n);
+                }
         
-        arr.display();
-        arr.quickSort();
-        System.out.println("Second lowest item is: " + arr.getItem(1));
-        System.out.println("Highest item  is: " + arr.getItem(arr.getSize()-1));  
+                arr.display();
+                arr.quickSort();
+                System.out.println("Second lowest item is: " + arr.getItem(1));
+                System.out.println("Highest item  is: " + arr.getItem(arr.getSize()-1));
+                break;
         }
     }
     

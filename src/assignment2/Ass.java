@@ -99,36 +99,35 @@ public class Ass {
         System.out.println("Prime numbers from 1 to " + range + " are");
         System.out.println(primeNumbers);
     }
-    
-    private long counter = 0;
-    private long count = 0;
+ 
+    public static boolean isPrime(int n) {
+        if (n < 2) {
+            return false;
+        } else if (n % 2 == 0 & n != 2) {
+            return false;
+        } else {
+            return isPrime(n, (int) Math.sqrt(n));
+        }
+    }
 
-    public void recursivePrimeNumber(int num){
-        if(isPrime(num)){
-            System.out.print(" " + num);
-        }
-        else{
-            int divider = 2;
-            boolean found = false;
-            while(!found){
-                if(num % divider ==0){
-                    recursivePrimeNumber(divider);
-                    recursivePrimeNumber(num / divider);
-                    found = true;
-                }
-                else divider++;
-            }
+    private static boolean isPrime(int n, int i) {
+        if (i < 2) {
+            return true;
+        } else if (n % i == 0) {
+            return false;
+        } else {
+            return isPrime(n, --i);
         }
     }
- 
- 
-    private static boolean isPrime(int num){
-        for(int i = 2; i <= num/2; i++)
-        {
-            if(num % i == 0 ){
-                return false;
-            }
-        }
-        return true;
-    }
+
+   public static void recursivePrimeNumber(int n){
+       if(n < 2) {
+            return ;
+       } else if(isPrime(n)) {
+            System.out.println(n);
+       } 
+
+       recursivePrimeNumber(--n);
+
+   }
 }
